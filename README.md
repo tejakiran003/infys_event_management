@@ -5,7 +5,8 @@ A simple and user-friendly Flask-based web application for managing and booking 
 ---
 
 ## 📝 **Description**  
-This project simplifies event management by allowing users to view and book events dynamically while providing an admin panel for managing events efficiently.  
+
+This project developed under infosys springboard internship and it  simplifies event management by allowing users to view and book events dynamically while providing an admin panel for managing events efficiently.  
 
 ---
 
@@ -53,12 +54,6 @@ This project simplifies event management by allowing users to view and book even
    flask run  
    ```  
 
-7. **Access the App:**  
-   Open your browser and go to:  
-   ```  
-   http://127.0.0.1:5000  
-   ```  
-
 ---
 
 ## 🌟 **Future Enhancements**  
@@ -69,7 +64,10 @@ This project simplifies event management by allowing users to view and book even
 ---
 
 ## 📂 **Contributors**  
-- List group members and their roles here (e.g., developer, designer, tester).  
+- Teja kiran
+- Azeem Mohammed
+- Roffin jason
+- G.Karthick  
 
 ---
 
