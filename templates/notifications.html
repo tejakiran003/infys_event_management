@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notification.css') }}">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Notifications List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        li {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #f1f1f1;
+        }
+
+        li:nth-child(odd) {
+            background-color: #e7f7ff;
+        }
+
+        li:nth-child(even) {
+            background-color: #f4f8fb;
+        }
+
+        .notification-message {
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        /* Link Styles */
+        a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Empty Notification Message */
+        .no-notifications {
+            color: #6c757d;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Notifications</h1>
+
+    <ul>
+        {% for note in notifications %}
+            <li>
+                <div class="notification-message">{{ note.message }}</div>
+            </li>
+        {% else %}
+            <li class="no-notifications">No new notifications.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('login') }}">Back to Home</a>
+
+</body>
+</html>

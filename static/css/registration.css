@@ -1,0 +1,110 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: white;
+    padding-top: 50px;
+}
+
+#registration-form {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    width: 130%;
+    max-width: 700px;
+    margin: 20px;
+    animation: fadeIn 0.8s ease;
+    position: relative;
+    right: 85px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#header {
+    text-align: center;
+    color: #FFA500;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+label {
+    font-size: 1rem;
+    color: #fb932c;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: black;
+    color: rgb(251, 250, 249);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #ffa500;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+}
+
+.buttons input[type="submit"], .buttons input[type="reset"] {
+    width: 30%;
+    margin: 0 1%;
+    margin-left: 68px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffa500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.buttons input[type="submit"]:hover, .buttons input[type="reset"]:hover {
+    background: #ffa500;
+    color: black;
+    border-color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    #header {
+        font-size: 2rem;
+    }
+
+    #registration-form {
+        padding: 20px;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], .buttons input[type="submit"], .buttons input[type="reset"] {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('login') }}" target="_blank">Home</a></li>
+                <li><a href="{{ url_for('login') }}" target="_blank">Login</a></li>
+                <li><a href="{{ url_for('events') }}" target="_blank">Events</a></li>
+                <li><a href="{{ url_for('notifications') }}" target="_blank">Notifications</a></li>
+                {% if 'user_id' in session %}
+                    <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-content">
+        <div id="login-container">
+            <div id="login-form">
+                <div class="login-heading">
+                    <h3 id="quote">Your next unforgettable moment is <br> just one click away.</h3>
+                </div>
+                
+                <!-- Flash Messages for Errors -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for category, message in messages %}
+                                <div class="alert {{ category }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                
+                <form action="{{ url_for('login_submit') }}" method="post">
+                    <div class="form-group">
+                        <label for="username">Enter Username</label>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="buttons">
+                        <input type="reset" id="cancel" name="cancel" value="Cancel">
+                        <button type="submit" id="submit-btn">Submit</button>
+                    </div>
+                </form>
+                <p>Don't have an account?<br><br><a href="{{ url_for('registration') }}" target="_blank">Click Here to Register yourself</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Event Management</p>
+    </footer>
+</body>
+</html>

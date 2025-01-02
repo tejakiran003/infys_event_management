@@ -1,0 +1,136 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    box-sizing: border-box;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #FFA500;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.summary-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #fb932c;
+    display: block;
+    margin-bottom: 10px;
+}
+
+select, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: black;
+    color: rgb(251, 250, 249);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus, input[type="file"]:focus {
+    border-color: #ffa500;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+}
+
+button {
+    width: 26%;
+    margin-left: 80px;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 18px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffa500;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background: #ffa500;
+    color: #000;
+    border-color: white;
+}
+
+.btn-secondary {
+    width: 26%;
+    margin-left: 80px;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 18px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffa500;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ffa500;
+    color: #000;
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    select, input[type="file"], button, .btn-secondary {
+        font-size: 0.9rem;
+    }
+}

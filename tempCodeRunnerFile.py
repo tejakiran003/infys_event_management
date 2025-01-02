@@ -1,0 +1,1 @@
+hall_id = db.Column(db.Integer, db.ForeignKey('halls.id'), nullable=False)

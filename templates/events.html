@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create an Event</h1>
+        <form action="{{ url_for('new_event') }}" target="_blank" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="contact_details">Mobile Number:</label>
+                <input type="text" id="contact_details" name="contact_details" required placeholder="Enter your mobile number">
+            </div>
+            <div class="form-group">
+                <label for="location">Event Location:</label>
+                <input type="text" id="location" name="location" required placeholder="Enter event location">
+            </div>
+            <div class="form-group">
+                <label for="event_type">Type of Event:</label>
+                <select id="event_type" name="event_type" required>
+                    <option value="" disabled selected>Select event type</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="start_datetime">Start Date and Time:</label>
+                <input type="datetime-local" id="start_datetime" name="start_datetime" required>
+            </div>
+            <div class="form-group">
+                <label for="end_datetime">End Date and Time:</label>
+                <input type="datetime-local" id="end_datetime" name="end_datetime" required>
+            </div>
+            <div class="form-group">
+                <label for="event_size">Event Size:</label>
+                <input type="number" id="event_size" name="event_size" required placeholder="Enter expected number of attendees">
+            </div>
+            <div class="form-group">
+                <label for="event_description">Event Description:</label>
+                <textarea id="event_description" name="event_description" rows="4" placeholder="Provide a brief description of the event"></textarea>
+            </div>
+            <div class="button-group">
+                <input type="reset" id="cancel" name="cancel" value="Cancel">
+                <input type="submit" id="submit" name="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
